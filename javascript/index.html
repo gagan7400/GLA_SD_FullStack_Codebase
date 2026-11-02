@@ -5,17 +5,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .mainbox {
+            width: 100px;
+            height: 100px;
+            background: white;
+            color: black;
+        }
+
+        .dark {
+            background: black;
+            color: white;
+        }
+    </style>
 </head>
 
-<body>
-    <script>
-    //     console.time("time")
-    //     document.write("hello world");
-    //    console.log("object")
-    //    console.warn("warning");
-    //    console.error("error");
-    //    console.timeEnd("time")
-    </script>
+<!-- <body onkeyup="eventHandler('keyup')" 
+ onkeydown="eventHandler('keydown')"  > -->
+<body onload="eventHandler('load')"
+ onscroll="eventHandler('scroll')"
+  onresize="eventHandler('resize')">
+ 
+ <button>new btn</button>
+ 
+ 
+    <button onclick="eventHandler('click')"> click event </button>
+  <button ondblclick="eventHandler('dblclick')"> dblclick event </button>
+  <button oncontextmenu="eventHandler('contextmenu')"> contextmenu event </button>
+  <button onmouseover="eventHandler('mouseover')"> mouseover event </button>
+  <button onmouseenter="eventHandler('mouseenter')"> mouseenter event </button>
+  <button onmouseout="eventHandler('mouseout')"> mouseout event </button>
+  <button onmouseleave="eventHandler('mouseleave')"> mouseleave event </button>
+  <button onmousemove="eventHandler('mousemove')"> mousemove event </button>
+  <button onmousewheel="eventHandler('mousewheel')"> mousewheel event </button>
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aut quia velit a, quae distinctio ipsum est nisi consequatur qui itaque maiores quod laborum magnam neque excepturi dolores consequuntur repellendus illo ad fugiat! Excepturi, sint non velit nisi ut quae quod consequuntur sit consectetur nulla, architecto, sunt illum alias harum.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aut quia velit a, quae distinctio ipsum est nisi consequatur qui itaque maiores quod laborum magnam neque excepturi dolores consequuntur repellendus illo ad fugiat! Excepturi, sint non velit nisi ut quae quod consequuntur sit consectetur nulla, architecto, sunt illum alias harum.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aut quia velit a, quae distinctio ipsum est nisi consequatur qui itaque maiores quod laborum magnam neque excepturi dolores consequuntur repellendus illo ad fugiat! Excepturi, sint non velit nisi ut quae quod consequuntur sit consectetur nulla, architecto, sunt illum alias harum.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aut quia velit a, quae distinctio ipsum est nisi consequatur qui itaque maiores quod laborum magnam neque excepturi dolores consequuntur repellendus illo ad fugiat! Excepturi, sint non velit nisi ut quae quod consequuntur sit consectetur nulla, architecto, sunt illum alias harum.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aut quia velit a, quae distinctio ipsum est nisi consequatur qui itaque maiores quod laborum magnam neque excepturi dolores consequuntur repellendus illo ad fugiat! Excepturi, sint non velit nisi ut quae quod consequuntur sit consectetur nulla, architecto, sunt illum alias harum.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aut quia velit a, quae distinctio ipsum est nisi consequatur qui itaque maiores quod laborum magnam neque excepturi dolores consequuntur repellendus illo ad fugiat! Excepturi, sint non velit nisi ut quae quod consequuntur sit consectetur nulla, architecto, sunt illum alias harum.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aut quia velit a, quae distinctio ipsum est nisi consequatur qui itaque maiores quod laborum magnam neque excepturi dolores consequuntur repellendus illo ad fugiat! Excepturi, sint non velit nisi ut quae quod consequuntur sit consectetur nulla, architecto, sunt illum alias harum.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aut quia velit a, quae distinctio ipsum est nisi consequatur qui itaque maiores quod laborum magnam neque excepturi dolores consequuntur repellendus illo ad fugiat! Excepturi, sint non velit nisi ut quae quod consequuntur sit consectetur nulla, architecto, sunt illum alias harum.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aut quia velit a, quae distinctio ipsum est nisi consequatur qui itaque maiores quod laborum magnam neque excepturi dolores consequuntur repellendus illo ad fugiat! Excepturi, sint non velit nisi ut quae quod consequuntur sit consectetur nulla, architecto, sunt illum alias harum.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aut quia velit a, quae distinctio ipsum est nisi consequatur qui itaque maiores quod laborum magnam neque excepturi dolores consequuntur repellendus illo ad fugiat! Excepturi, sint non velit nisi ut quae quod consequuntur sit consectetur nulla, architecto, sunt illum alias harum.</p>
+    <h1>hello world</h1>
+    <p id="para2" class="paraclass">hello world</p>
+    <p id="para1" class="paraclass">hello world</p>
+    <p id="para3" class="paraclass">hello world</p>
+    <div class="paraclass" id="div">
+        <p>hello world</p>
+    </div>
+    <ul>
+        <li>list1</li>
+        <li>list2</li>
+        <li>list3</li>
+        <li>list4</li>
+    </ul>
+    <form>
+        <input type="text" name="username">
+        <input type="radio" name="gender" id="">
+        <input type="radio" name="gender" id="">
+    </form>
+
+    <div class="mainbox">
+        <p>Lorem ipsum dolor sit amet.</p>
+    </div>
+    <button onclick="toggle()">toggle</button>
+
     <script src="script.js"></script>
 </body>
 
