@@ -5,31 +5,191 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .mainbox {
-            width: 100px;
-            height: 100px;
-            background: white;
-            color: black;
-        }
-
-        .dark {
-            background: black;
-            color: white;
-        }
-    </style>
 </head>
 
-<!-- <body onkeyup="eventHandler('keyup')" 
- onkeydown="eventHandler('keydown')"  > -->
-<body onload="eventHandler('load')"
- onscroll="eventHandler('scroll')"
-  onresize="eventHandler('resize')">
- 
- <button>new btn</button>
- 
- 
-    <button onclick="eventHandler('click')"> click event </button>
+<body>
+    <button onclick="getdata()">getdata</button>
+    <button onclick="postdata()">postdata</button>
+    <button onclick="putdata()">putdata</button>
+    <button onclick="deletedata()">deletedata</button>
+    <h1>Task Manager</h1>
+    <!--
+     Task-Manager  folder 
+  task.html , task.js  file 
+ -->
+    <!-- <form>
+        <label for="title">title</label>
+        <br><input type="text" name="title" id="title">
+        <br><label for="description">description</label>
+        <br><input type="text" name="description" id="description">
+        <br><label for="date">date</label>
+        <br><input type="date" name="date" id="date">
+        <br><button>submit</button>
+    </form> -->
+    <!-- <table width="50%" cellpadding="10px" border>
+        <thead>
+            <tr>
+                <th>Sno</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th colspan="2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table> -->
+    <!-- <script>
+        let form = document.querySelector("form");
+        let title = document.querySelector("#title");
+        let description = document.querySelector("#description");
+        let date = document.querySelector("#date");
+        let tasks = [];
+        let isUpdate = false;
+        let updateIndex = null;
+        let submitBtn = document.querySelector("form button")
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            let newtask = { title: title.value, description: description.value, date: date.value }
+            if (isUpdate) {
+                tasks.splice(updateIndex, 1, newtask);
+                isUpdate = false;
+                updateIndex = null;
+                submitBtn.textContent = "submit"
+            } else {
+                tasks.push(newtask);
+            }
+            showtask()
+        });
+        let deleteHandler = (index) => {
+            tasks.splice(index, 1);
+            showtask()
+        }
+        let updateHandler = (index) => {
+            isUpdate = true;
+            updateIndex = index;
+            submitBtn.textContent = "update";
+            title.value = tasks[index].title
+            description.value = tasks[index].description
+            date.value = tasks[index].date
+        }
+        function showtask() {
+            let tbody = document.querySelector("tbody");
+            tbody.innerHTML = ""
+            tasks.map((task, index) => {
+                tbody.innerHTML += `<tr> 
+                <td> ${index + 1} </td>
+                <td> ${task.title}</td>
+                <td> ${task.description}</td>
+                <td> ${task.date}</td>
+                <td> <button onclick="deleteHandler(${index})"> delete </button> </td>
+                <td> <button onclick="updateHandler(${index})"> update </button> </td>
+                </tr>`
+            })
+        }
+
+    </script> -->
+
+    <!-- <button onclick="stop()">stop</button> -->
+    <script>
+
+        // 16 nov .SD, absentis :
+        // 1,2,4,5,6,9,11,12,15,17,20,21,22,24,26,30,35,37,39,41,42,43,48,49,50,51,54,56,58,61,62,64,66,
+
+
+    </script>
+
+
+    <!-- <input type="text"> -->
+    <!-- <div class="circle"></div> -->
+    <!-- <form>
+        <input type="text" name="title" id=""> <br>
+        <input type="checkbox" name="conditions" value="condition1" id=""> condition1<br>
+        <input type="checkbox" name="conditions" value="condition2" id=""> condition2 <br>
+        <input type="radio" name="gender" value="male" id="">Male <br>
+        <input type="radio" name="gender" value="female" id="">Female <br>
+        <input type="file" name="" id=""> <br>
+        <button>submit</button>
+    </form> -->
+
+
+
+    <!-- <script>
+
+        // let form = document.querySelector("form");
+        // form.addEventListener("submit", (event) => {
+        //     event.preventDefault();//to prevent default behaviour;
+        //     // text
+        //     console.log(event.target.gender);//gender is name here ;
+        //     let inp = document.querySelector("input[type=text]");
+        //     console.log(inp.value);
+        //     inp.value = "newdata";
+
+        //     let check = document.querySelectorAll("input[type=checkbox]");
+        //     // checked
+        //     let output = [];
+        //     for (let i of check) {
+        //         if (i.checked) {
+        //             output.push(i.value)
+        //         }
+        //     }
+        //     console.log(output);
+        //     let radio = document.querySelectorAll("input[type=radio]");
+        //     for (let i of radio) {
+        //         if (i.checked) {
+        //             console.log("gender :- ", i.value)
+        //         }
+        //     }
+        //     let input = document.querySelector("input[type=file]");
+        //     console.log(input.files)//array of files
+        //     //             let file = URL.createObjectURL(input.files[0])
+        //     //             console.log(file)
+        //     //             let img= document.createElement("img");
+        //     //             img.src = file;
+        //     //  document.body.appendChild(img);
+
+
+        // })
+
+
+        // let input = document.querySelector("input");
+        // input.addEventListener("keyup",
+        //     (event) => {
+        //         console.log(event.key);
+        //         if (event.key == "Enter") {
+        //             console.log(event.target.value);//it get the input value
+        //         }
+        //     });
+
+        // let body = document.querySelector("body");
+        // body.addEventListener("mousemove", (event) => {
+        //     let circle = document.querySelector(".circle");
+        //     circle.style.top = event.clientY + "px";
+        //     circle.style.left = event.clientX + "px";
+        // });
+
+
+
+        // body.addEventListener("click", (event) => {
+        //     console.log(event.target);
+        //     console.log(event.clientX ,event.clientY)
+        //      });
+
+        // let btn1 = document.querySelector("button");
+        // btn1.addEventListener("click", (event) => {
+        //     console.log(event);
+        //     console.log("event by js");
+        // }, { once: false, passive: true, capture: true });
+    </script> -->
+    <!-- <button>blue</button>
+    <button>red</button>
+    <button onclick="getdata()">green</button>
+    <button>yellow</button>
+    <button>white</button>
+    <button>black</button> -->
+
+    <!-- <button onclick="eventHandler('click')"> click event </button>
   <button ondblclick="eventHandler('dblclick')"> dblclick event </button>
   <button oncontextmenu="eventHandler('contextmenu')"> contextmenu event </button>
   <button onmouseover="eventHandler('mouseover')"> mouseover event </button>
@@ -37,19 +197,9 @@
   <button onmouseout="eventHandler('mouseout')"> mouseout event </button>
   <button onmouseleave="eventHandler('mouseleave')"> mouseleave event </button>
   <button onmousemove="eventHandler('mousemove')"> mousemove event </button>
-  <button onmousewheel="eventHandler('mousewheel')"> mousewheel event </button>
+  <button onmousewheel="eventHandler('mousewheel')"> mousewheel event </button> -->
 
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aut quia velit a, quae distinctio ipsum est nisi consequatur qui itaque maiores quod laborum magnam neque excepturi dolores consequuntur repellendus illo ad fugiat! Excepturi, sint non velit nisi ut quae quod consequuntur sit consectetur nulla, architecto, sunt illum alias harum.</p>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aut quia velit a, quae distinctio ipsum est nisi consequatur qui itaque maiores quod laborum magnam neque excepturi dolores consequuntur repellendus illo ad fugiat! Excepturi, sint non velit nisi ut quae quod consequuntur sit consectetur nulla, architecto, sunt illum alias harum.</p>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aut quia velit a, quae distinctio ipsum est nisi consequatur qui itaque maiores quod laborum magnam neque excepturi dolores consequuntur repellendus illo ad fugiat! Excepturi, sint non velit nisi ut quae quod consequuntur sit consectetur nulla, architecto, sunt illum alias harum.</p>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aut quia velit a, quae distinctio ipsum est nisi consequatur qui itaque maiores quod laborum magnam neque excepturi dolores consequuntur repellendus illo ad fugiat! Excepturi, sint non velit nisi ut quae quod consequuntur sit consectetur nulla, architecto, sunt illum alias harum.</p>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aut quia velit a, quae distinctio ipsum est nisi consequatur qui itaque maiores quod laborum magnam neque excepturi dolores consequuntur repellendus illo ad fugiat! Excepturi, sint non velit nisi ut quae quod consequuntur sit consectetur nulla, architecto, sunt illum alias harum.</p>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aut quia velit a, quae distinctio ipsum est nisi consequatur qui itaque maiores quod laborum magnam neque excepturi dolores consequuntur repellendus illo ad fugiat! Excepturi, sint non velit nisi ut quae quod consequuntur sit consectetur nulla, architecto, sunt illum alias harum.</p>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aut quia velit a, quae distinctio ipsum est nisi consequatur qui itaque maiores quod laborum magnam neque excepturi dolores consequuntur repellendus illo ad fugiat! Excepturi, sint non velit nisi ut quae quod consequuntur sit consectetur nulla, architecto, sunt illum alias harum.</p>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aut quia velit a, quae distinctio ipsum est nisi consequatur qui itaque maiores quod laborum magnam neque excepturi dolores consequuntur repellendus illo ad fugiat! Excepturi, sint non velit nisi ut quae quod consequuntur sit consectetur nulla, architecto, sunt illum alias harum.</p>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aut quia velit a, quae distinctio ipsum est nisi consequatur qui itaque maiores quod laborum magnam neque excepturi dolores consequuntur repellendus illo ad fugiat! Excepturi, sint non velit nisi ut quae quod consequuntur sit consectetur nulla, architecto, sunt illum alias harum.</p>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aut quia velit a, quae distinctio ipsum est nisi consequatur qui itaque maiores quod laborum magnam neque excepturi dolores consequuntur repellendus illo ad fugiat! Excepturi, sint non velit nisi ut quae quod consequuntur sit consectetur nulla, architecto, sunt illum alias harum.</p>
-    <h1>hello world</h1>
+    <!-- <h1>hello world</h1>
     <p id="para2" class="paraclass">hello world</p>
     <p id="para1" class="paraclass">hello world</p>
     <p id="para3" class="paraclass">hello world</p>
@@ -71,7 +221,7 @@
     <div class="mainbox">
         <p>Lorem ipsum dolor sit amet.</p>
     </div>
-    <button onclick="toggle()">toggle</button>
+    <button onclick="toggle()">toggle</button> -->
 
     <script src="script.js"></script>
 </body>
