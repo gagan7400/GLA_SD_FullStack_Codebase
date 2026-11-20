@@ -1184,57 +1184,57 @@ let pro2 = new Promise((resolve, reject) => {
 
 // fetch(url , {method:"",body:"",headers:{}})
 // getapi:-
-let url = "https://jsonplaceholder.typicode.com/posts"
-function getdata() {
-    let data = fetch(url, {
-        method: "GET",
-        headers: { "Authorization": "Bearer xyz" }
-    });
-    // console.log(data);
-    data.then((res) => { return res.json() })
-        .then((result) => { console.log(result) })
-        .catch((err) => { console.log(err) })
-}
-function postdata() {
-    let data = fetch(url, {
-        method: "POST",
-        body: JSON.stringify({ title: "first", body: "hello first post" }),
-        headers: {
-            "Content-Type": "application/json",//text/plain
-            "Authorization": "Bearer xyz"
-        }
-    });
-    data.then((res) => { return res.json() })
-        .then((result) => { console.log(result) })
-        .catch((err) => { console.log(err) })
-};
-function putdata() {
-    let data = fetch(url + "/33", {
-        method: "PUT",
-        body: JSON.stringify({ title: "first", body: "hello first post" }),
-        headers: {
-            "Content-Type": "application/json",//text/plain
-            "Authorization": "Bearer xyz"
-        }
-    });
-    data.then((res) => { return res.json() })
-        .then((result) => { console.log(result) })
-        .catch((err) => { console.log(err) })
-};
-function deletedata() {
-    let data = fetch(url + "/45", {
-        method: "DELETE",
-        headers: {
-            "Authorization": "Bearer xyz"
-        }
-    });
-    data.then((res) => {
-        console.log(res);
-        return res.json()
-    })
-        .then((result) => { console.log(result) })
-        .catch((err) => { console.log(err) })
-};
+// let url = "https://jsonplaceholder.typicode.com/posts"
+// function getdata() {
+//     let data = fetch(url, {
+//         method: "GET",
+//         headers: { "Authorization": "Bearer xyz" }
+//     });
+//     // console.log(data);
+//     data.then((res) => { return res.json() })
+//         .then((result) => { console.log(result) })
+//         .catch((err) => { console.log(err) })
+// }
+// function postdata() {
+//     let data = fetch(url, {
+//         method: "POST",
+//         body: JSON.stringify({ title: "first", body: "hello first post" }),
+//         headers: {
+//             "Content-Type": "application/json",//text/plain
+//             "Authorization": "Bearer xyz"
+//         }
+//     });
+//     data.then((res) => { return res.json() })
+//         .then((result) => { console.log(result) })
+//         .catch((err) => { console.log(err) })
+// };
+// function putdata() {
+//     let data = fetch(url + "/33", {
+//         method: "PUT",
+//         body: JSON.stringify({ title: "first", body: "hello first post" }),
+//         headers: {
+//             "Content-Type": "application/json",//text/plain
+//             "Authorization": "Bearer xyz"
+//         }
+//     });
+//     data.then((res) => { return res.json() })
+//         .then((result) => { console.log(result) })
+//         .catch((err) => { console.log(err) })
+// };
+// function deletedata() {
+//     let data = fetch(url + "/45", {
+//         method: "DELETE",
+//         headers: {
+//             "Authorization": "Bearer xyz"
+//         }
+//     });
+//     data.then((res) => {
+//         console.log(res);
+//         return res.json()
+//     })
+//         .then((result) => { console.log(result) })
+//         .catch((err) => { console.log(err) })
+// };
 
 // text , xml , json 
 {/* <student>
@@ -1246,12 +1246,12 @@ function deletedata() {
 // cannot use comment in json also the trailing comma 
 
 // JSON.stringify() ,JSON.parse()
-let obj = {
-    name: "raj",
-    //kjewfhjf
-    age: 10,
-};
-let converted = JSON.stringify(obj);
-console.log(converted);
-console.log(JSON.parse(converted));
-// 2,5,13,14,17,18,20,22,23,25,30,38,39,43,44,48,49,50,51,52,54,62,63,64,65,66,
+// let obj = {
+//     name: "raj",
+//     //kjewfhjf
+//     age: 10,
+// };
+// let converted = JSON.stringify(obj);
+// console.log(converted);
+// console.log(JSON.parse(converted));
+// // 2,5,13,14,17,18,20,22,23,25,30,38,39,43,44,48,49,50,51,52,54,62,63,64,65,66,  
