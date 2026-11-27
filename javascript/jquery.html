@@ -5,21 +5,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jquery</title>
+    <style>
+        .popup {
+            width: fit-content;
+            height: fit-content;
+            padding: 1px 10px;
+            background: grey;
+            color: white;
+            position: fixed;
+            left: calc(50% - 100px);
+            top: calc(50% - 20px);
+        }
+
+        .content {
+            border: solid;
+            height: 500px;
+            width: 100%;
+            ;
+        }
+    </style>
 </head>
 
 <body>
-    <p id="firstid" class="firstclass"> hello world</p>
-    <p class="firstclass"> hello world</p>
-    <p class="firstclass"> hello new world</p>
-    <p class="firstclass"> hello world</p>
-    <input type="text">
-    <button>call</button>
-    <div id="content"></div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- <div>
+        <p>hello first p</p>
+        <p id="p">child p</p>
+        <h1>hello world</h1>
+        <button>submit</button>
+    </div> -->
+
+    <!-- <button id="openbtn">Open Popup</button> -->
+    <!-- <div class="popup">
+        <p>this is first warning</p>
+    </div>
+    <div class="content"></div> -->
+    <ul>
+
+    </ul>
     <script>
-        // console.log($);//$ key is used to apply jquery methods 
+        // //$(".popup:first").fadeOut(500);//hide the box
+        // $("#openbtn").on("click",()=>{
+        //     //$(".popup:first").fadeIn(500)//show the box
+        // $(".popup:first").fadeToggle(500)// show if hide ,hide if show
+        // })
+        // slideup ,slidedown , slideToggle
+        // $(".popup:first").slideUp(500);//hide the box
+        // $("#openbtn").on("click", () => {
+        //     $(".popup:first").slideDown(500)//show the box
+        //     $(".popup:first").slideToggle(500)// show if hide ,hide if show
+        // })
+        //hide ,show ,toggle
+        // $(".popup:first").hide(500);//hide the box
+        // $("#openbtn").on("click", () => {
+        //     $(".popup:first").show(500)//show the box
+        //     $(".popup:first").toggle(500)// show if hide ,hide if show
+        // })
+
+        // $("#openbtn").on("click", () => {
+        //     $(".popup:first").animate({ opacity: 0 }, 1000).delay(200).animate({opacity:1} ,1000)
+        // })
+
+        // AJAX:- asyncronous javascript and XML
+        //         $.ajax({
+        //             url: "https://jsonplaceholder.typicode.com/posts",
+        //             method: "GET",
+        //             dataType: "json",
+        //             timeout: 1000,
+        //             success: (res) => {
+        //                 console.log(res);
+        //             },
+        //             error: (err, status) => { console.log(err, status) }
+        //         });
+
+
+        //         let callback = (res) => { console.log(res) }
+
+        //         $.get(api, callback);//to get the data from apis
+
+        //         $.post(api, { title: "first", body: "hello" }, callback);
+        //         //to post data on server  using API .
+
+        //         $.getJSON(api, callback) //when the result in json format ;
+
+
+        //         $("div").load("University.html")
+        // //to load seprate file in our html code .
+
+
+        //ready function 
+
+        // 44 presents  medical
+
+
+        let api = "https://jsonplaceholder.typicode.com/posts";
+        $(document).ready(() => {
+            $.get(api, (res) => {
+                res.map((v, i) => {
+                    $("ul").append("<li>" + v.title + "</li>")
+                })
+            })
+        })
+
+
+        // absents :- ,2,5,7,9,12,16,17,20,23,26,29,31,33,35,36,38,39,45,47,48,49,51,55,56,57,60,61,62,63,65,66
+`
+
+
+
+        // DOM :- methods, parent selection
+        console.log($("#p").parent());
+        console.log($("#p").parents());
+        console.log($("#p").siblings().text("siblings"))
+        console.log($("#p").prev().text("prev para"))
+
+
+
+        console.log($("#p").next().text("next para"))
+        console.log($("body").children())
+        console.log($("#p").closest("p"));
+
+
+
+
+
+
+
+        // console.log($);//$ key is used to apply jquery methods
         // console.log(jQuery);
-        //  selectors:- 
+        //  selectors:-
         // console.log($("p"))
         // console.log($("#firstid"))
         // console.log($(".firstclass"))
@@ -31,10 +146,10 @@
         // console.log($("p:contains(new)")) //select the tag which contain this text.
         // console.log($("p, h1")) // multiple elem selector
         // console.log($("ul li")) //child selector
-        // console.log($("ul>li"))  // direct child selector 
+        // console.log($("ul>li"))  // direct child selector
         // console.log($("[id]"))
         // console.log($("[id^=first]"))
-        // // updates :- 
+        // // updates :-
         // // text ,html , val ,
         // console.log($("p").text());
         // $("p:first").text("this is first para")
@@ -43,7 +158,7 @@
         // $("input").val("new value here")
         // console.log($("input").val());
         // // event add using jquery
-        // // on , off , one , 
+        // // on , off , one ,
 
         // // $("button").on("click",()=>{ //add event
         // //     console.log("event called")
@@ -51,9 +166,11 @@
         // $("button").one("click", () => { // add single event
         //     console.log("event called")
         // })
-        // $("button").off("click", callback); // remove event 
-        
+        // $("button").off("click", callback); // remove event
         //absents :- 1,4,5,9,12,15,17,19,22,27,32,36,38,39,40,41,44,45,47,48,49,51,52,55,61,
+
+
+
     </script>
 </body>
 

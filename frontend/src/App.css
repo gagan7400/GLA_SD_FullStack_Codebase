@@ -1,0 +1,42 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.home,
+.app {
+    border: 1px solid black;
+    padding: 10px;
+    margin: auto;
+    width: 70%;
+    height: 100vh;
+    /* background: aqua; */
+}
+
+.app {
+    /* background-color: blueviolet; */
+    margin: 0px;
+    width: 100%;
+    height: auto;
+    padding: 0px;
+}
+.card{
+    width:250px;
+    height: auto;
+    padding:10px;
+    border:1px solid black;
+    margin:10px;
+    background: aqua;
+    color:white;
+    font-size: large;
+}
+.card button{
+    padding:5px 10px;
+    border-radius: 8px;
+    border: none;
+}
+.cards{
+    display: flex;
+    gap:20px;flex-wrap: wrap;
+    padding:20px;
+}
